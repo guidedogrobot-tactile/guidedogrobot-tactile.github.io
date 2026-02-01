@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="GuideTWSI: A Diverse Tactile Walking Surface Indicator Dataset from Synthetic and Real-World Images for Blind and Low-Vision Navigation.">
+  <meta name="keywords" content="Guide Dog Robot, Tactile Paving, TWSI, Truncated Domes, Blind Navigation, Synthetic Data">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GuideTWSI: A Diverse Tactile Walking Surface Indicator Dataset from Synthetic and Real-World Images for Blind and Low-Vision Navigation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" type="image/png" href="./static/images/gd.png">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://guidedogrobot-navigation.github.io/">
+            GuideNav: Vision-Only Navigation (HRI'26)
+          </a>
+          <a class="navbar-item" href="https://guidedogrobot-hgidataset.github.io/">
+            GuideData: Handler-Guide dog Interaction Dataset (HRI'26)
+          </a>
+          <a class="navbar-item" href="https://guidedogrobot-stairclimbing.github.io/">
+            Silent Walking and Climbing (Under review)
+          </a>
+          <a class="navbar-item" href="https://guidedogrobot-obstacleavoid.github.io/">
+            Obstacle Avoidance (ICRA'23)
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">GuideTWSI: A Diverse Tactile Walking Surface Indicator Dataset from Synthetic and Real-World Images for Blind and Low-Vision Navigation</h1>
+          <p class="subtitle is-5" style="margin-bottom: 1em;">
+            <span class="tag is-info is-medium">ICRA 2026</span>
+          </p>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://hchlhwang.github.io/">Hochul Hwang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/soowan-yang-0b723a293/?originalSubdomain=kr">Soowan Yang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Anh N. H. Nguyen</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Parth Goel</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Krisha Adhikari</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.umass.edu/ials/people/sunghoon-ivan-lee">Sunghoon I. Lee</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.cs.utexas.edu/people/faculty-researchers/joydeep-biswas">Joydeep Biswas</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://mcec.umaine.edu/home/faculty222/giudice-nicholas/">Nicholas A. Giudice</a><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.umass.edu/robotics/people/donghyun-kim">Donghyun Kim</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Massachusetts Amherst,</span>
+            <span class="author-block"><sup>2</sup>DGIST,</span>
+            <span class="author-block"><sup>3</sup>The University of Texas at Austin,</span>
+            <span class="author-block"><sup>4</sup>University of Maine</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- ArXiv Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+               <span class="link-block">
+                <a href="https://github.com/guidedogrobot-tactile/GuideTWSI"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming Soon)</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+               <span class="link-block">
+                <a href="https://youtu.be/rX4hTbBNHf8"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body has-text-centered">
+      <!-- Teaser Video -->
+      <video id="teaser" autoplay muted loop playsinline style="max-width: 100%; display: block; margin: 0 auto;">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered" style="margin-top: 1em;">
+        <span class="dnerf">GuideTWSI</span> is the largest and most diverse Tactile Walking Surface Indicator (TWSI) dataset, enabling reliable segmentation of truncated domes for safe robot navigation assistance for blind and low-vision travelers.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Tactile Walking Surface Indicators (TWSIs) are safety-critical landmarks that blind and low-vision (BLV) pedestrians use to locate crossings and hazard zones. From our observation sessions with BLV guide dog handlers, trainers, and an O&M specialist, we confirmed the critical importance of reliable and accurate TWSI segmentation for navigation assistance of BLV individuals.
+          </p>
+          <p>
+            Achieving such reliability requires large-scale annotated data. However, TWSIs are severely underrepresented in existing urban perception datasets, and even existing dedicated paving datasets are limited: they lack robot-relevant viewpoints (e.g., egocentric or top-down) and are geographically biased toward East Asian directional bars.
+          </p>
+          <p>
+            We introduce <strong>GuideTWSI</strong>, the largest and most diverse TWSI dataset, which combines a <strong>photorealistic synthetic dataset</strong>, carefully curated open-source tactile data, and <strong>quadruped real-world data</strong> collected and annotated by the authors. Notably, we developed an <strong>Unreal Engine-based synthetic data generation pipeline</strong> to obtain segmented, labeled data across diverse materials, lighting conditions, weather, and robot-relevant viewpoints.
+          </p>
+          <p>
+            Extensive evaluations show that synthetic augmentation improves truncated dome segmentation across diverse state-of-the-art models, with gains of up to <strong>+29 mIoU points</strong>, and enhances cross-domain robustness. Moreover, real-robot experiments demonstrate accurate stoppings at truncated domes, with high repeatability and stop success rates (<strong>96.15%</strong>).
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Key Contributions. -->
+    <div class="columns is-centered" style="margin-top: 2em;">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Key Contributions</h2>
+        <div class="content has-text-justified">
+          <ul style="font-size: 1.1rem;">
+            <li><strong>Photorealistic Synthetic Data Pipeline:</strong> Unreal Engine 4-based pipeline specifically designed for blind navigation, simulating multiple truncated dome textures under diverse viewpoints and lighting conditions, generating over 15K samples.</li>
+            <li><strong>Large-Scale GuideTWSI Dataset:</strong> Comprising (i) meticulously curated open-source annotations (RBar-22K), (ii) our synthetic data (SDome-15K), and (iii) real-world robot-collected data (RDome-2K), all released with code and pretrained model weights.</li>
+            <li><strong>Extensive Evaluations:</strong> State-of-the-art segmentation models showing up to +29 mIoU improvement with synthetic augmentation, demonstrating robustness across domains.</li>
+            <li><strong>Real-World Robot Deployment:</strong> Guide dog robot stopping at truncated domes with a success rate over 96% across diverse, previously unseen real-world environments.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Key Contributions. -->
+
+    <!-- Dataset Overview. -->
+    <div class="columns is-centered" style="margin-top: 2em;">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Photorealistic Synthetic Tactile Paving Dataset Generation</h2>
+        <!-- Dataset Image. -->
+        <div class="has-text-centered" style="margin-bottom: 1.5em;">
+          <img src="static/images/tactile_f1.png" style="max-width: 100%; border: none;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Our synthetic data generation pipeline uses various sidewalk environments in Unreal Engine 4 with varying viewpoints, lighting, and weather conditions to simulate real-world variability. We use AirSim for automatic annotation of depth, instance masks, and bounding boxes.
+          </p>
+
+          <h4>Dataset Components:</h4>
+          <table class="table is-bordered is-striped is-hoverable" style="width: 100%;">
+            <thead>
+              <tr>
+                <th>Dataset</th>
+                <th>Scale</th>
+                <th>Type</th>
+                <th>Geography</th>
+                <th>Modalities</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>RBar-22K</strong> (compiled)</td>
+                <td>~22K</td>
+                <td>Real/bars</td>
+                <td>Mostly Asia</td>
+                <td>RGB, Seg.</td>
+              </tr>
+              <tr>
+                <td><strong>RDome-2K</strong> (ours)</td>
+                <td>2.4K+</td>
+                <td>Real/domes</td>
+                <td>United States</td>
+                <td>RGB, Seg.</td>
+              </tr>
+              <tr>
+                <td><strong>SDome-15K</strong> (ours)</td>
+                <td>15K+</td>
+                <td>Synthetic/domes</td>
+                <td>Simulated</td>
+                <td>RGB+D, BBx, Seg.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!--/ Dataset Overview. -->
+
+    <!-- Robot Deployment. -->
+    <div class="columns is-centered" style="margin-top: 2em;">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Real Robot Data Collection and Hardware Experiment</h2>
+        <div class="has-text-centered" style="margin-bottom: 1.5em;">
+          <img src="static/images/tactile_f2.png" style="max-width: 100%; border: none;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            We integrated our fine-tuned segmentation model into a fully untethered guide dog robot platform. The system is built upon the Unitree Go2 quadruped robot equipped with a RealSense D435 camera positioned with a downward tilt for truncated dome segmentation.
+          </p>
+          <p>
+            The model was converted to a TensorRT-optimized engine, achieving up to <strong>43 FPS</strong> inference on an NVIDIA Jetson AGX Orin. Our system employs segmentation-based closest-point detection strategy, identifying the lowest truncated dome-pixel in the image frame as the point closest to the robot body.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Robot Deployment. -->
+
+    <!-- Results. -->
+    <div class="columns is-centered" style="margin-top: 2em;">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Experimental Results</h2>
+        <div class="content has-text-justified">
+          <h4>Impact of Synthetic Data Augmentation on Truncated Dome Segmentation</h4>
+          <table class="table is-bordered is-striped is-hoverable" style="width: 100%; font-size: 0.9rem;">
+            <thead>
+              <tr>
+                <th rowspan="2">Method</th>
+                <th colspan="2" style="text-align: center;">Real Data Only</th>
+                <th colspan="2" style="text-align: center;">Real + Synthetic</th>
+                <th rowspan="2" style="text-align: center;">Delta mIoU</th>
+              </tr>
+              <tr>
+                <th>mAP50-95</th>
+                <th>mIoU</th>
+                <th>mAP50-95</th>
+                <th>mIoU</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>YOLOv11-seg-N</td>
+                <td>0.5934</td>
+                <td>0.6161</td>
+                <td>0.7288</td>
+                <td>0.7308</td>
+                <td style="color: green;"><strong>+0.1147</strong></td>
+              </tr>
+              <tr>
+                <td>YOLOv11-seg-X</td>
+                <td>0.7362</td>
+                <td>0.7389</td>
+                <td>0.8188</td>
+                <td>0.7887</td>
+                <td style="color: green;"><strong>+0.0498</strong></td>
+              </tr>
+              <tr>
+                <td>Mask2Former</td>
+                <td>0.4798</td>
+                <td>0.5777</td>
+                <td>0.7829</td>
+                <td>0.8375</td>
+                <td style="color: green;"><strong>+0.2598</strong></td>
+              </tr>
+              <tr>
+                <td>SAM2.1+UNet</td>
+                <td>0.3475</td>
+                <td>0.4789</td>
+                <td>0.5627</td>
+                <td>0.6883</td>
+                <td style="color: green;"><strong>+0.2094</strong></td>
+              </tr>
+              <tr>
+                <td>DINOv3+RegCls</td>
+                <td>0.6176</td>
+                <td>0.7322</td>
+                <td>0.6933</td>
+                <td>0.7926</td>
+                <td style="color: green;"><strong>+0.0604</strong></td>
+              </tr>
+              <tr>
+                <td>DINOv3+EoMT</td>
+                <td>0.4828</td>
+                <td>0.5804</td>
+                <td>0.8492</td>
+                <td>0.8756</td>
+                <td style="color: green;"><strong>+0.2952</strong></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 style="margin-top: 2em;">Robot Stopping Performance</h4>
+          <table class="table is-bordered is-striped is-hoverable" style="width: 100%;">
+            <thead>
+              <tr>
+                <th>Environment</th>
+                <th>N (locations)</th>
+                <th>Mean Distance (cm)</th>
+                <th>Success Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Urban</td>
+                <td>6</td>
+                <td>35.2 +/- 9.2</td>
+                <td>29/30</td>
+              </tr>
+              <tr>
+                <td>Urban2</td>
+                <td>5</td>
+                <td>47.1 +/- 15.6</td>
+                <td>25/25</td>
+              </tr>
+              <tr>
+                <td>Suburban</td>
+                <td>6</td>
+                <td>38.2 +/- 14.4</td>
+                <td>32/34</td>
+              </tr>
+              <tr>
+                <td>Residential</td>
+                <td>3</td>
+                <td>34.6 +/- 14.2</td>
+                <td>14/15</td>
+              </tr>
+              <tr style="font-weight: bold;">
+                <td>Overall</td>
+                <td>20</td>
+                <td>39.0 +/- 14.3</td>
+                <td>100/104 (96.15%)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!--/ Results. -->
+
+    <!-- Qualitative Results. -->
+    <div class="columns is-centered" style="margin-top: 2em;">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+        <div class="has-text-centered" style="margin-bottom: 1.5em;">
+          <img src="static/images/tactile_f3.png" style="max-width: 100%; border: none;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Qualitative comparison of segmentation models trained on real data only vs. real + synthetic data. Models trained with synthetic data produce sharper boundaries and fewer missed detections, especially under challenging textures and lighting.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Qualitative Results. -->
+
+    <!-- Video. -->
+    <div class="columns is-centered" style="margin-top: 2em;">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Video</h2>
+        <div class="publication-video has-text-centered">
+          <iframe src="https://www.youtube.com/embed/rX4hTbBNHf8?rel=0&amp;showinfo=0"
+                  width="100%"
+                  height="400"
+                  style="max-width: 800px;"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Video. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{hwang2026guidetwsi,
+  title={GuideTWSI: A Diverse Tactile Walking Surface Indicator Dataset from Synthetic and Real-World Images for Blind and Low-Vision Navigation},
+  author={Hwang, Hochul and Yang, Soowan and Nguyen, Anh N. H. and Goel, Parth and Adhikari, Krisha and Lee, Sunghoon I. and Biswas, Joydeep and Giudice, Nicholas A. and Kim, Donghyun},
+  booktitle={2026 IEEE International Conference on Robotics and Automation (ICRA)},
+  year={2026}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <!-- <a class="icon-link"
+         href="">
+        <i class="fas fa-file-pdf"></i>
+      </a> -->
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The website (<a href="https://github.com/nerfies/nerfies.github.io">source code</a>) is from <a href="https://github.com/nerfies/nerfies.github.io"><span class="dnerf">Nerfies</span></a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
